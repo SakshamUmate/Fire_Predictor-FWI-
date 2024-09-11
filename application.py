@@ -5,8 +5,8 @@ import pandas as pd
 import warnings
 warnings.filterwarnings('ignore')
 
-app = Flask(__name__)
-
+application = Flask(__name__)
+app=application
 @app.route('/')
 def home():
     return render_template('home.html')

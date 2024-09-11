@@ -86,8 +86,8 @@ form input{
     margin-top: 0.5%;
 }
 
-{% if is_positive %}
+/* {% if is_positive %}
 body {
     background-image: url('{{ url_for('static', filename='images/forest_fire_bg.jpg') }}');
 }
-{% endif %}
+{% endif %} */
