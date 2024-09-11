@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Fire Weather Index (FWI) Predictor</title>
+    <link rel="stylesheet" href="..\static\predict.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='predict.css') }}">
+    <script src="java.js"></script>
+    <style>
+        {% if is_positive %}
+        body{
+            background-image: url('{{url_for('static', filename='/images/forest_fire_bg.jpg') }}');
+        }
+        {% endif %}
+    </style>
+</head>
+<body>
+    
+    <h1>{{ '\U0001F525 FWI:' + (Results) if Results else 'FWI Predictor' }}</h1>
+    <form action="/predict" method="POST">
+        <label for="Temperature">Temperature:</label>
+        <input type="number" id="Temperature" name="Temperature" required>
+        <br>
+        <label for="Rh">Relative Humidity:</label>
+        <input type="number" id="Rh" name="Rh" required>
+        <br>    
+        <label for="Ws">Wind Speed:</label>
+        <input type="number" id="Ws" name="Ws" required>
+        <br>
+        <label for="Rain">Rain:</label>
+        <input type="number" id="Rain" name="Rain" required>
+        <br>
+        <label for="FFMC">Fine Fuel Moisture Code (FFMC):</label>
+        <input type="number" id="FFMC" name="FFMC" required>
+        <br>
+        <label for="DMC">Duff Moisture Code (DMC):</label>
+        <input type="number" id="DMC" name="DMC" required>
+        <br>
+        <label for="ISI">Initial Spread Index (ISI):</label>
+        <input  type="number" id="ISI" name="ISI" required>
+        <br>
+        <label for="class">Classes</label>
+        <input type="text" id="class" name="class" required>
+        <br>
+        <label for="Region">Region:</label>
+        <input type="text" id="Region" name="Region" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+    <!-- <h2 style="color: aliceblue;">FWI Prediction: {{Results}}</h2> -->
+
+</body>
+</html>

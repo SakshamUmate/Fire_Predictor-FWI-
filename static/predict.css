@@ -1,0 +1,93 @@
+h1 {
+    text-align: center;
+    color: rgb(0, 0, 0);
+    
+    padding: 10px;
+    border-radius: 20px;
+}
+/* 
+table{
+    padding: 10px;
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    margin: 0 auto;
+    width: 50%;
+    border-collapse: collapse;
+
+} */
+body{
+    background-image: url('../static/images/new_forest.avif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+}
+
+.Predictor_button{
+    background-color: royalblue;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 40%;
+    margin-top: 40%;
+
+}
+
+form{
+    
+    padding: 10px;
+    max-width: 500px;
+    max-height: fit-content;
+    border-radius: 20px;
+    backdrop-filter: blur(2px);
+    color: black;
+    font-size: 20px;
+    font-weight:bolder;
+    width: 50%;
+    /* border-color: black; */
+    box-shadow: 0 0 10px  rgb(0, 0, 0);
+    /* border-style: solid; */
+    margin-left: 25%;
+    margin-top: 10%;
+    
+}
+
+form input[type=submit]{
+    background-color: royalblue;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+    margin-left: 40%;
+    margin-top: 20%;
+}
+
+form input{
+    padding: 10px;
+    border-radius: 20px;
+    margin: 1px 1px;
+    margin-left: 40%;
+
+    margin-top: 0.5%;
+}
+
+{% if is_positive %}
+body {
+    background-image: url('{{ url_for('static', filename='images/forest_fire_bg.jpg') }}');
+}
+{% endif %}
