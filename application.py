@@ -17,8 +17,8 @@ def predictor():
         return render_template('Predict.html')
     elif request.method=='POST':
         try:
-            redge_model=pickle.load(open(r'C:\Users\Lenovo\Desktop\New Notebook\Notes\ML\Algerian_FWI_predictor\models\Algerian_ff_Ridge_model.pkl','rb'))
-            Scaler=pickle.load(open(r'C:\Users\Lenovo\Desktop\New Notebook\Notes\ML\Algerian_FWI_predictor\models\Algerian_ff_scaler.pkl','rb'))
+            redge_model=pickle.load(open('models\Algerian_ff_Ridge_model.pkl','rb'))
+            Scaler=pickle.load(open('models\Algerian_ff_scaler.pkl','rb'))
             
             temp=float(request.form.get('Temperature'))
             rh=float(request.form.get('Rh'))
