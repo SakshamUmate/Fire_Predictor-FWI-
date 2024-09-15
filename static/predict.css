@@ -1,20 +1,10 @@
 h1 {
     text-align: center;
     color: rgb(0, 0, 0);
-    
     padding: 10px;
-    border-radius: 20px;
-}
-/* 
-table{
-    padding: 10px;
-    border-radius: 20px;
-    background-color: rgb(255, 255, 255);
-    margin: 0 auto;
-    width: 50%;
-    border-collapse: collapse;
 
-} */
+}
+
 body{
     background-image: url('../static/images/new_forest.avif');
     background-size: cover;
@@ -27,7 +17,7 @@ body{
     font-size: 20px;
 }
 
-.Predictor_button{
+/* .Predictor_button{
     background-color: royalblue;
     color: white;
     padding: 10px 20px;
@@ -41,23 +31,20 @@ body{
     margin-left: 40%;
     margin-top: 40%;
 
-}
+} */
 
 form{
-    
-    padding: 10px;
-    max-width: 500px;
+    padding: 20px;
+    max-width: fit-content;
     max-height: fit-content;
     border-radius: 20px;
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(4px);
     color: black;
     font-size: 20px;
     font-weight:bolder;
-    width: 50%;
-    /* border-color: black; */
+    width: 50%;  
     box-shadow: 0 0 10px  rgb(0, 0, 0);
-    /* border-style: solid; */
-    margin-left: 25%;
+    margin-left: 30%;
     margin-top: 10%;
     
 }
@@ -67,8 +54,7 @@ form input[type=submit]{
     color: white;
     padding: 10px 20px;
     text-align: center;
-    text-decoration: none;
-    display: inline-block;
+    
     font-size: 20px;
     border-radius: 20px;
     margin: 4px 2px;
@@ -78,16 +64,10 @@ form input[type=submit]{
 }
 
 form input{
-    padding: 10px;
-    border-radius: 20px;
+    padding: 5px;
+    border-radius: 15px;
     margin: 1px 1px;
     margin-left: 40%;
-
-    margin-top: 0.5%;
+    
 }
 
-/* {% if is_positive %}
-body {
-    background-image: url('{{ url_for('static', filename='images/forest_fire_bg.jpg') }}');
-}
-{% endif %} */

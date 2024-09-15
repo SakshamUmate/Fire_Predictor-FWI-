@@ -35,15 +35,17 @@ def predictor():
             scaled_data=Scaler.transform([[temp,rh,ws,rain,ffmc,dmc,isi,classes,region]])
             
             result=redge_model.predict(scaled_data)
-
+            
             if result[0]>12:
                 is_positive=True
-            
+            else:
+                is_positive=False
             return render_template('Predict.html',Results=str(result[0]),is_positive=is_positive)
         except Exception as e:
-            return f"Something went wrong \n {e}"
+            return f"Something went wrong \n \t {e}"
     else:
         return 'Invalid request '
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
