@@ -1,6 +1,7 @@
 from flask import Flask, request,jsonify,render_template
 import numpy as np
 import pickle
+import os
 import pandas as pd
 import warnings
 warnings.filterwarnings('ignore')
@@ -17,8 +18,11 @@ def predictor():
         return render_template('Predict.html')
     elif request.method=='POST':
         try:
-            redge_model=pickle.load(open('models\Algerian_ff_Ridge_model.pkl','rb'))
-            Scaler=pickle.load(open('models\Algerian_ff_scaler.pkl','rb'))
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            ridge_model_path = os.path.join(current_dir, 'models', 'Algerian_ff_Ridge_model.pkl')
+            scaler_path = os.path.join(current_dir, 'models', 'Algerian_ff_scaler.pkl')
+            redge_model = pickle.load(open(ridge_model_path, 'rb'))
+            Scaler = pickle.load(open(scaler_path, 'rb'))
             
             temp=float(request.form.get('Temperature'))
             rh=float(request.form.get('Rh'))
